@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | AI Skill Assessment</title>
-  <link rel="stylesheet" href="styles.css">
   <style>
 body {
     font-family: Arial, sans-serif;
@@ -86,7 +85,7 @@ a {
       <input type="password" id="password" placeholder="Enter your password" required>
       <button type="submit">Login</button>
     </form>
-    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign up</a></p>
 
     
   </div>

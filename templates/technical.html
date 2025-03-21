@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Skills Assessment</title>
+
+    <!-- Google Fonts (Futuristic Theme) -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:wght@300;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap & Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Exo 2', sans-serif;
+            background-color: #0a0a0a;
+            color: white;
+            /* text-align: center; */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+        }
+
+        h2 {
+            font-family: 'Audiowide', cursive;
+            text-shadow: 0px 0px 10px #0ff;
+        }
+
+        .question-box {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0px 0px 10px #0ff;
+        }
+
+        select, textarea {
+            background: #121212;
+            color: #0ff;
+            border: 1px solid #0ff;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .submit-btn {
+            background-color: #0ff;
+            color: black;
+            font-weight: bold;
+            border-radius: 5px;
+            padding: 10px 20px;
+            box-shadow: 0px 0px 10px #0ff;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #00e6e6;
+            box-shadow: 0px 0px 15px #00e6e6;
+        }
+
+        .mcq-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .result-box {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #0ff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h2>Technical Skills Assessment</h2>
+        <p>Solve the coding problems and answer the MCQs.</p>
+
+        <!-- Coding Question 1 -->
+        <div class="question-box">
+            <h4>Question 1: Reverse a String</h4>
+            <p>Write a function to reverse a given string without using built-in reverse functions.</p>
+            
+            <label for="lang1"><strong>Select Language:</strong></label>
+            <select id="lang1">
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+            </select>
+
+            <textarea id="codeInput1" rows="6" placeholder="Write your code here..."></textarea>
+        </div>
+
+        <!-- Coding Question 2 -->
+        <div class="question-box">
+            <h4>Question 2: Find Factorial</h4>
+            <p>Write a function to compute the factorial of a number using recursion.</p>
+            
+            <label for="lang2"><strong>Select Language:</strong></label>
+            <select id="lang2">
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+            </select>
+
+            <textarea id="codeInput2" rows="6" placeholder="Write your code here..."></textarea>
+        </div>
+
+        <button class="btn submit-btn" onclick="submitCode()">Submit Code</button>
+
+        <div class="result-box" id="codeResult"></div>
+
+        <!-- Multiple Choice Questions -->
+        <div class="mcq-box">
+            <h4>Multiple Choice Questions</h4>
+
+            <p>1. What is the time complexity of binary search?</p>
+            <input type="radio" name="q1" value="A"> O(n)<br>
+            <input type="radio" name="q1" value="B"> O(log n)<br>
+            <input type="radio" name="q1" value="C"> O(n log n)<br>
+            <input type="radio" name="q1" value="D"> O(1)<br>
+
+            <p>2. Which programming language is primarily used for data science?</p>
+            <input type="radio" name="q2" value="A"> C++<br>
+            <input type="radio" name="q2" value="B"> Python<br>
+            <input type="radio" name="q2" value="C"> Java<br>
+            <input type="radio" name="q2" value="D"> Ruby<br>
+
+            <button class="btn submit-btn" onclick="checkMCQ()">Submit MCQs</button>
+        </div>
+
+        <div class="result-box" id="mcqResult"></div>
+    </div>
+
+    <script>
+        function submitCode() {
+            let code1 = document.getElementById("codeInput1").value.trim();
+            let code2 = document.getElementById("codeInput2").value.trim();
+
+            let correctCode1 = `void reverseString(char str[]) { int n = strlen(str); for (int i = 0; i < n / 2; i++) { char temp = str[i]; str[i] = str[n - i - 1]; str[n - i - 1] = temp; } }`;
+            let correctCode2 = `int factorial(int n) { if (n == 0 || n == 1) return 1; return n * factorial(n - 1); }`;
+
+            let resultText = "";
+
+            if (code1.includes("reverse") && code1.includes("for")) {
+                resultText += "<p class='text-success'>✅ Reverse String: Correct!</p>";
+            } else {
+                resultText += "<p class='text-danger'>❌ Reverse String: Incorrect!</p>";
+            }
+
+            if (code2.includes("factorial") && code2.includes("return")) {
+                resultText += "<p class='text-success'>✅ Factorial Function: Correct!</p>";
+            } else {
+                resultText += "<p class='text-danger'>❌ Factorial Function: Incorrect!</p>";
+            }
+
+            document.getElementById("codeResult").innerHTML = resultText;
+        }
+
+        function checkMCQ() {
+            let answers = { q1: "B", q2: "B" };
+            let score = 0;
+
+            for (let q in answers) {
+                let selected = document.querySelector(`input[name="${q}"]:checked`);
+                if (selected && selected.value === answers[q]) score++;
+            }
+
+            document.getElementById("mcqResult").innerHTML = `<p>Your Score: ${score}/2</p>`;
+        }
+    </script>
+
+</body>
+</html>
