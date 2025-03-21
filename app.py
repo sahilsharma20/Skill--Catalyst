@@ -33,6 +33,11 @@ def index():
 def feature():
     return render_template("feature.html")
 
+# Technical Page
+@app.route("/technical")
+def technical():
+    return render_template("technical.html")
+
 # Dashboard Page
 @app.route("/dashboard")
 def dashboard():
