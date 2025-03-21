@@ -1,4 +1,5 @@
 
+
 /* Futuristic Dark Theme */
 body {
     font-family: 'Exo 2', sans-serif;
@@ -150,3 +151,85 @@ body {
     transform: translateY(-5px);
     box-shadow: 0px 6px 20px rgba(0, 255, 255, 0.8);
 }
+
+    /* Futuristic Dark Theme */
+    body {
+        font-family: 'Exo 2', sans-serif;
+        background: #0a0a0a;
+        color: #fff;
+    }
+
+    /* Navbar */
+    .navbar {
+        background: rgba(10, 10, 10, 0.9);
+        backdrop-filter: blur(10px);
+    }
+
+    .navbar-brand {
+        font-family: 'Audiowide', cursive;
+        color: #0ff !important;
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+
+    .nav-link {
+        color: #0ff !important;
+    }
+
+    /* Hero Section */
+    .hero {
+        text-align: center;
+        padding: 100px 20px;
+        background: linear-gradient(120deg, #0a0a0a, #1a237e);
+        color: white;
+        animation: neon-glow 2s infinite alternate;
+    }
+
+    .hero h1 {
+        font-family: 'Audiowide', cursive;
+        font-size: 50px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+
+    .btn-custom {
+        background: #0ff;
+        color: black;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: 0.3s;
+        box-shadow: 0 0 5px #0ff, 0 0 10px #0ff;
+    }
+
+    .btn-custom:hover {
+        background: #00e6e6;
+        box-shadow: 0 0 15px #00e6e6;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        text-align: center;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .feature-card i {
+        font-size: 3rem;
+        color: #0ff;
+    }
+
+    /* Neon Glow Animation */
+    @keyframes neon-glow {
+        from {
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+
+        to {
+            text-shadow: 0 0 15px #00e6e6, 0 0 30px #00e6e6;
+        }
+    }

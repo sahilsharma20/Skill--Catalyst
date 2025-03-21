@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | AI Skill Assessment</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+body {
+    font-family: Arial, sans-serif;
+    background: url("image1.png") no-repeat center center/cover;
+    background-color: #0b0f19;
+    color: white;
+    display: flex;
+    justify-content: flex-start; /* Moves the box to the left */
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding-left: 10%; /* Adjust position */
+}
+
+.login-container {
+    background: rgba(30, 38, 51, 0.9); /* Semi-transparent dark background */
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 90%;  /* Ensures all input fields are equal width */
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    width: 94%;  /* Matches the width of input fields */
+    padding: 10px;
+    background: #00d9ff;
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #00a6cc;
+}
+
+p {
+    margin-top: 10px;
+}
+
+a {
+    color: #00d9ff;
+    text-decoration: none;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+}
+
+
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="password" id="password" placeholder="Enter your password" required>
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+
+    
+  </div>
+
+  
+</body>
+
+</html>
