@@ -15,7 +15,7 @@
 
     <!-- Bootstrap & Custom Stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/style.css" rel="stylesheet">  <!-- Linking External CSS -->
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">  <!-- Flask static file linking -->
 </head>
 
 <body>
@@ -23,17 +23,17 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-            <a href="#" class="navbar-brand">SkillAssess AI</a>
+            <a href="{{ url_for('index') }}" class="navbar-brand">SkillAssess AI</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="feature.html" class="nav-link">Features</a></li>
-                    <li class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></li>
-                    <li class="nav-item"><a href="login.html" class="btn btn-light mx-2">Login</a></li>
-                    <li class="nav-item"><a href="signup.html" class="btn btn-warning">Sign Up</a></li>
+                    <li class="nav-item"><a href="{{ url_for('index') }}" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="{{ url_for('feature') }}" class="nav-link">Features</a></li>
+                    <li class="nav-item"><a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a></li>
+                    <li class="nav-item"><a href="{{ url_for('login') }}" class="btn btn-light mx-2">Login</a></li>
+                    <li class="nav-item"><a href="{{ url_for('signup') }}" class="btn btn-warning">Sign Up</a></li>
                 </ul>
             </div>
         </div>
@@ -44,7 +44,7 @@
     <div class="hero">
         <h1>AI-Powered Skill Assessment</h1>
         <p>Evaluate students' skills beyond traditional exams using AI-driven insights.</p>
-        <a href="feature.html" class="btn btn-custom">Start Assessment</a>
+        <a href="{{ url_for('feature') }}" class="btn btn-custom">Start Assessment</a>
     </div>
     <!-- Hero Section End -->
 
